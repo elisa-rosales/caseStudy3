@@ -41,8 +41,23 @@ ui <- fluidPage(
       ),
     # Main panel for displaying outputs ----
     mainPanel(
+      h3("Mathematical and Statistical Details of the Algorithm:"),
+      h5("We use Principle Component Analysis to visualize a low dimensional 
+         representation of the data that preserves the most variance.[2]
+         If an observable separation of the classes exist in this space, then we 
+         can build our models using the principle components, rather than the raw data. [2]
+         Additionally, we plot the singular values of the data matrix to determine 
+         whether data reduction of the data is effective. [2] From the lecture,
+         we learned that the linear combinations represent a new coordinate system obtained
+         by translating and rotating the original one. The new axes can be used to 
+         determine the directions with maximum variability of the sample data. [1]"),
       h3("Variance Explained by PC"),
-      showOutput("chart", "highcharts")
+      showOutput("chart", "highcharts"),
+      h4("Data source:"),
+      a('https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer/breast-cancer.data'),
+      h4("Sources:"),
+      h5("[1] Lecture 7 Slides"),
+      h5("[2]",a("http://faculty.marshall.usc.edu/gareth-james/ISL/"))
       )      
     )
 )
