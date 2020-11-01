@@ -41,8 +41,31 @@ ui <- fluidPage(
       ),
     # Main panel for displaying outputs ----
     mainPanel(
-      h3("Mathematical and Statistical Details of the Algorithm:"),
-      h5("We use Principle Component Analysis to visualize a low dimensional 
+      h3("Variance Explained by PC"),
+      showOutput("chart", "highcharts"),
+      h3("Description of the Data:"),
+      a("UCI Breast Cancer Dataset",href='https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer/'),
+      h5("This is one of three domains provided by the Oncology Institute
+     that has repeatedly appeared in the machine learning literature.
+     (See also lymphography and primary-tumor.)
+     This data set includes 201 instances of one class and 85 instances of
+     another class.  The instances are described by 9 attributes, some of
+     which are linear and some are nominal."),
+h5("Attribute Information:"),
+   h5("1. Class: no-recurrence-events, recurrence-events"),
+   h5("2. age: 10-19, 20-29, 30-39, 40-49, 50-59, 60-69, 70-79, 80-89, 90-99."),
+   h5("3. menopause: lt40, ge40, premeno."),
+   h5("4. tumor-size: 0-4, 5-9, 10-14, 15-19, 20-24, 25-29, 30-34, 35-39, 40-44,
+                  45-49, 50-54, 55-59."),
+   h5("5. inv-nodes: 0-2, 3-5, 6-8, 9-11, 12-14, 15-17, 18-20, 21-23, 24-26,
+                 27-29, 30-32, 33-35, 36-39."),
+   h5("6. node-caps: yes, no."),
+   h5("7. deg-malig: 1, 2, 3."),
+   h5("8. breast: left, right."),
+         h5("9. breast-quad: left-up, left-low, right-up,	right-low, central."),
+  h5("10. irradiat:	yes, no."),
+h3("Mathematical and Statistical Details of the Algorithm:"),
+h5("We use Principle Component Analysis to visualize a low dimensional 
          representation of the data that preserves the most variance.[2]
          If an observable separation of the classes exist in this space, then we 
          can build our models using the principle components, rather than the raw data. [2]
@@ -51,13 +74,9 @@ ui <- fluidPage(
          we learned that the linear combinations represent a new coordinate system obtained
          by translating and rotating the original one. The new axes can be used to 
          determine the directions with maximum variability of the sample data. [1]"),
-      h3("Variance Explained by PC"),
-      showOutput("chart", "highcharts"),
-      h4("Data source:"),
-      a('https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer/breast-cancer.data'),
-      h4("Sources:"),
-      h5("[1] Lecture 7 Slides"),
-      h5("[2]",a("http://faculty.marshall.usc.edu/gareth-james/ISL/"))
+h4("Sources:"),
+h5("[1] Lecture 7 Slides"),
+h5("[2]",a("ISLR",href="http://faculty.marshall.usc.edu/gareth-james/ISL/"))
       )      
     )
 )
