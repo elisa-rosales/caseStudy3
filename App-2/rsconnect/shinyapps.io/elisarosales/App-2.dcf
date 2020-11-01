@@ -1,0 +1,12 @@
+name: App-2
+title: App-2
+username:
+account: elisarosales
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3139487
+bundleId: 3807457
+url: https://elisarosales.shinyapps.io/App-2/
+when: 1604251141.12935
+asMultiple: FALSE
+asStatic: FALSE
